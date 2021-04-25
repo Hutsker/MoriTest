@@ -28,13 +28,19 @@ Widget::~Widget()
     delete ui;
 }
 
+/*!
+ * \brief Widget::on_comboBox_currentIndexChanged Функция выбора книги черех комбобокс
+ * \param index
+ */
+
 void Widget::on_comboBox_currentIndexChanged(int index)
 {
-        groop = index;
 
         ui->listWidget->clear();  // Отчистка виджета
 
         QSqlQuery query("SELECT family, first_name FROM prj_group_addrbook WHERE prj_group_id = '"+QString::number(index)+"'");
+
+        groop = index;
 
         if(!query.exec()) { qDebug("---------"); } //проверка на правильность запроса
 
@@ -45,6 +51,9 @@ void Widget::on_comboBox_currentIndexChanged(int index)
         }
 }
 
+/*!
+ * \brief Widget::on_pushButton_clicked Функция добавления через строку ввода человека в выбранную книгу ранее книгу
+ */
 
 void Widget::on_pushButton_clicked() //Add
 {
@@ -78,7 +87,9 @@ void Widget::on_pushButton_3_clicked() //Rename
 {
 
 }
-
+/*!
+ * \brief Widget::on_pushButton_2_clicked Функция удаления выбранного ранее в списке человека по кнопке
+ */
 void Widget::on_pushButton_2_clicked() //Delete
 {
     QListWidgetItem *item = ui->listWidget->item(ui->listWidget->currentRow());
@@ -103,6 +114,9 @@ void Widget::on_pushButton_2_clicked() //Delete
     ui->listWidget->takeItem (ui->listWidget->currentRow());
 }
 
+/*!
+ * \brief Widget::on_pushButton_4_clicked Функция поиска человека через строку ввода по фамилии и имени
+ */
 void Widget::on_pushButton_4_clicked() //Search
 {
     if (ui -> lineEdit -> text() == "") {

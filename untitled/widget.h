@@ -25,6 +25,7 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+
 private slots:
     void on_comboBox_currentIndexChanged(int index);
 
