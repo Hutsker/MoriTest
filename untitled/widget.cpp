@@ -52,7 +52,7 @@ void Widget::on_comboBox_currentIndexChanged(int index)
 }
 
 /*!
- * \brief Widget::on_pushButton_clicked Функция добавления через строку ввода человека в выбранную книгу ранее книгу
+ * \brief Widget::on_pushButton_clicked Функция добавления через строку ввода человека в выбранную ранее книгу
  */
 
 void Widget::on_pushButton_clicked() //Add
