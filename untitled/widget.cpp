@@ -4,7 +4,11 @@
 #include <stdlib.h>
 
 int groop = 1;
-
+/*!
+ * \brief Widget::Widget вфывфыв
+ *
+ * Сдесь есть что то
+ */
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -30,7 +34,7 @@ Widget::~Widget()
 
 /*!
  * \brief Widget::on_comboBox_currentIndexChanged Функция выбора книги черех комбобокс
- * \param index
+ *
  */
 
 void Widget::on_comboBox_currentIndexChanged(int index)
